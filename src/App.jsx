@@ -1,8 +1,10 @@
+import React from 'react'
 import LeetCodeTracker from './components/LeetCodeTracker'
+import './App.css'
 
 function App() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
+    <div className="app-container">
       <LeetCodeTracker />
     </div>
   )

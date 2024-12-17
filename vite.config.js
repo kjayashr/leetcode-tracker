@@ -6,6 +6,6 @@ export default defineConfig({
   base: '/leetcode-tracker/',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
+    sourcemap: true
   }
 })
