@@ -6,6 +6,11 @@ export default defineConfig({
   base: '/leetcode-tracker/',
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })
