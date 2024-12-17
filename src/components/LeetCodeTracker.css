@@ -1,0 +1,262 @@
+/* LeetCodeTracker.css */
+
+/* Container Layouts */
+.leetcode-tracker-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Stat Cards */
+.stat-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card.streak {
+  background: linear-gradient(to bottom right, #fff5f0, #ffe4d4);
+}
+
+.stat-card.problems {
+  background: linear-gradient(to bottom right, #f0f7ff, #d4e8ff);
+}
+
+.stat-card.progress {
+  background: linear-gradient(to bottom right, #f3f0ff, #e4d4ff);
+}
+
+.stat-card.remaining {
+  background: linear-gradient(to bottom right, #f0fff4, #d4ffed);
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Problems Section */
+.problems-section {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.problems-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Problem Cards */
+.problem-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.problem-card:hover {
+  border-color: #93c5fd;
+  background-color: #f8fafc;
+}
+
+.problem-card.carried-over {
+  border-color: #fdba74;
+}
+
+.problem-card.carried-over:hover {
+  border-color: #f97316;
+}
+
+.problem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.problem-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.problem-number {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Difficulty Badges */
+.difficulty-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.difficulty-badge.easy {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.difficulty-badge.med {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.difficulty-badge.hard {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Carried Over Badge */
+.carried-over-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #ea580c;
+}
+
+.carried-over-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.problem-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-top: 0.5rem;
+}
+
+/* Warning Card */
+.warning-card {
+  padding: 1rem;
+  background-color: #fff7ed;
+  border: 1px solid #fdba74;
+  margin-top: 1rem;
+}
+
+.warning-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.warning-icon {
+  color: #ea580c;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.warning-text {
+  color: #9a3412;
+  font-size: 0.875rem;
+}
+
+/* No Problems Message */
+.no-problems-message {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .leetcode-tracker-container {
+    padding: 0.5rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .problem-card {
+    padding: 0.75rem;
+  }
+
+  .problem-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carried-over-badge {
+    margin-top: 0.25rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.problem-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .problem-card {
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+  }
+  
+  .problem-card:active {
+    background-color: #f8fafc;
+  }
+}
