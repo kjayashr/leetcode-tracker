@@ -3,5 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/leetcode-tracker/'
+  base: '/leetcode-tracker/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  }
 })
